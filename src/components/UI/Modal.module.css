@@ -1,0 +1,32 @@
+.main {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(53, 53, 53, 0.9);
+}
+.modal {
+  border-radius: .5rem;
+  width: 45rem;
+  background-color: antiquewhite;
+  overflow: hidden;
+}
+.modal__title {
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background-color: darkmagenta;
+  color: white;
+}
+
+.modal__body {
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal__button{
+    align-self: flex-end;
+}

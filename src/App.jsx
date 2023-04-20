@@ -3,9 +3,11 @@ import NewUser from "./components/Users/NewUser";
 import UsersList from "./components/Users/UsersList";
 
 import "./App.css";
+import Modal from "./components/UI/Modal";
 
 const App = () => {
   const [users, setUsers] = useState([]);
+
 
   const addNewUser = (user) => {
     setUsers((users) => [...users, user]);
