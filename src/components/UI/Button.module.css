@@ -7,3 +7,6 @@
     border: none;
     border-radius: 0.25rem;
 }
+.button__confirm:hover {
+    cursor: pointer;
+}

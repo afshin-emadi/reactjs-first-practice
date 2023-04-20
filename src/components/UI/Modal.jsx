@@ -4,6 +4,9 @@ import styles from "./Modal.module.css";
 import Button from "./Button";
 
 const Modal = (props) => {
+  const handleClick = () => {
+    props.onConfirm();
+  };
   return (
     <div className={styles.main}>
       <div className={styles.modal}>
@@ -11,7 +14,7 @@ const Modal = (props) => {
         <div className={styles.modal__body}>
           <p>{props.message}</p>
           <div className={styles.modal__button}>
-            <Button>Okay</Button>
+            <Button onClick={handleClick}>Okay</Button>
           </div>
         </div>
       </div>
