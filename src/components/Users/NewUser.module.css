@@ -1,0 +1,21 @@
+.main {
+  margin-top: 2rem;
+  width: 45rem;
+  background-color: antiquewhite;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.form-input {
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+
+.form-input input{
+    font-size: 1.25rem;
+}
