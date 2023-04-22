@@ -2,10 +2,15 @@ import React from "react";
 import styles from "./Modal.module.css";
 
 import Button from "./Button";
+import ReactDOM from "react-dom";
 
-const Modal = (props) => {
+const BackDrop = (props) => {
+  return <div className={styles.backdrop} onClick={props.onConfirm}></div>;
+};
+
+const ModalOverlay = (props) => {
   return (
-    <div className={styles.backdrop}>
+    <div className={styles.overlay}>
       <div className={styles.modal}>
         <h2 className={styles.modal__title}>{props.title}</h2>
         <div className={styles.modal__body}>
@@ -16,6 +21,25 @@ const Modal = (props) => {
         </div>
       </div>
     </div>
+  );
+};
+
+const Modal = (props) => {
+  return (
+    <React.Fragment>
+      {ReactDOM.createPortal(
+        <BackDrop onConfirm={props.onConfirm} />,
+        document.getElementById("backdrop-root")
+      )}
+      {ReactDOM.createPortal(
+        <ModalOverlay
+          title={props.title}
+          message={props.message}
+          onConfirm={props.onConfirm}
+        />,
+        document.getElementById("modal-root")
+      )}
+    </React.Fragment>
   );
 };
 
