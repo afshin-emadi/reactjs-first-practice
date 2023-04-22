@@ -4,7 +4,7 @@ import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 
 const NewUser = (props) => {
-  const [errorMsg, setErrorMsg] = useState("");
+  const [error, setError] = useState(null);
   const [inputName, setInputName] = useState("");
   const [inputAge, setInputAge] = useState("");
 
@@ -12,11 +12,17 @@ const NewUser = (props) => {
     event.preventDefault();
 
     if (inputName.trim().length === 0 || inputAge.trim().length === 0) {
-      setErrorMsg("Please enter a valid name and age(none-empty values).");
+      setError({
+        title: "Invalid Input",
+        message: "Please enter a valid name and age(none-empty values).",
+      });
       return;
     }
     if (+inputAge < 1) {
-      setErrorMsg("Please enter a valid age (>0).");
+      setError({
+        title: "Invalid age",
+        message: "Please enter a valid age (>0).",
+      });
       return;
     }
 
@@ -35,14 +41,14 @@ const NewUser = (props) => {
     setInputAge(event.target.value);
   };
   const handleConfirm = () => {
-    setErrorMsg("");
+    setError(null);
   };
   return (
     <div className={styles.main}>
-      {errorMsg && (
+      {error && (
         <Modal
-          title={"Invalid Input"}
-          message={errorMsg}
+          title={error.title}
+          message={error.message}
           onConfirm={handleConfirm}
         />
       )}

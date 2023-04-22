@@ -10,7 +10,7 @@ const App = () => {
 
 
   const addNewUser = (user) => {
-    setUsers((users) => [...users, user]);
+    setUsers((prevUsers) => [...prevUsers, user]);
   };
 
   return (

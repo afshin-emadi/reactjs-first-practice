@@ -1,4 +1,4 @@
-.main {
+.backdrop {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -8,12 +8,14 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(53, 53, 53, 0.9);
+  z-index: 10;
 }
 .modal {
   border-radius: .5rem;
   width: 45rem;
   background-color: antiquewhite;
   overflow: hidden;
+  z-index: 100;
 }
 .modal__title {
   padding: 0.5rem 1rem;
